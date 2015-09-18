@@ -13,10 +13,15 @@ public class MethodSwitch {
         int number;
         Scanner keyboard = new Scanner(System.in);
         
+        // Reformatted the menu options to give one per line.
         System.out.println("Enter '1' to play FIZZBUZZ.\n" + "Enter '2' to view the value of your chosen word.\n" + "Enter '3' to use the salary calculator.\n"
                 + "Enter '4' to check your grade.\n" + "Enter '5' to play Truth or Dare.\n" + "Enter '6' or any other number to EXIT.");
         number = keyboard.nextInt();
         
+        /**
+         * The switch method takes the user input number from 1 to 5 to run
+         * the appropriate method. 6 or any other number will end the program.
+         */
         switch (number)
         {
             case 1:
@@ -39,6 +44,10 @@ public class MethodSwitch {
         }
     }
     
+    /**
+     * Takes a user inputted number which if divisible by 3 outputs fizz,
+     * by 5 buzz, and both fizzbuzz. Neither gives an invalid statement.
+     */
     public static void fizzBuzz(){
         int fbNumber;
         Scanner keyboard = new Scanner(System.in);
@@ -60,6 +69,11 @@ public class MethodSwitch {
         }
     }
     
+    /**
+     * Takes a user inputted word and uses a for loop with the charAt method
+     * to find the ascii value of each letter and then totals them in an
+     * accumulator.
+     */
     public static void wordValue(){
         String userWord;
         int letter = 0;
@@ -77,6 +91,10 @@ public class MethodSwitch {
         System.out.println(total);
     }
     
+    /**
+     * Takes user inputted hours and wage and multiplies them to get a total 
+     * amount.
+     */
     public static void salaryCalculator(){
         double hours;
         double wage;
@@ -92,6 +110,10 @@ public class MethodSwitch {
         System.out.printf("The weekly salary is $%,.2f\n",salary);
     }
     
+    /**
+     * Takes a user inputted score to find the matching letter grade with if 
+     * else statements.
+     */
     public static void checkGrade(){
         double grade;
         Scanner keyboard = new Scanner(System.in);
@@ -116,6 +138,11 @@ public class MethodSwitch {
         }
     }
     
+    /**
+     * Takes a user inputted response and ignores the case to either be equal
+     * to true or false and output the correct response with an invalid
+     * statement if it is neither.
+     */
     public static void truthDare(){
         String response;
         Scanner keyboard = new Scanner(System.in);
@@ -134,6 +161,9 @@ public class MethodSwitch {
         }
     }
     
+    /**
+     * Outputs a farewell message if a valid number was not submitted.
+     */
     public static void goodbye(){
         System.out.println("Goodbye.");
     }
