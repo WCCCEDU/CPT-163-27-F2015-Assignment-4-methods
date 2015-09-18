@@ -10,7 +10,7 @@ public class Assignment4Methods {
      System.out.println("\t*************************************\n"
                       + "\t*       Steve's Calculator          *\n"
                       + "\t*************************************");
-     //menu     
+     //menu selection items   
      System.out.println( "1: Addition\n"
                        + "2: Subtraction\n"
                        + "3: Multiplication\n"
@@ -20,28 +20,28 @@ public class Assignment4Methods {
      
   
      System.out.print("Please Pick An Option: ");
-     int userInputNum = scan.nextInt();//int variable
+     int userInputNum = scan.nextInt();//user input
      System.out.print("\n");
      //menu selection if statements.
-     if (userInputNum == 1){
+     if (userInputNum == 1){//Runs add() method
          add();
      }
-     else if(userInputNum == 2){
+     else if(userInputNum == 2){//Runs subtract() method
          subtract();
      }
-     else if(userInputNum == 3){
+     else if(userInputNum == 3){//Runs multiplication method
          multi();
      }
-     else if(userInputNum == 4){
+     else if(userInputNum == 4){//Runs division method
          divide();
      }
-     else if(userInputNum == 5){
+     else if(userInputNum == 5){//Runs the word counter method
          wordCounter();
      }
-     else if(userInputNum == 6){
+     else if(userInputNum == 6){//Runs the end program method
          exit();
      }
-     else{
+     else{//Runs the error method
          error();
      }   
     }
