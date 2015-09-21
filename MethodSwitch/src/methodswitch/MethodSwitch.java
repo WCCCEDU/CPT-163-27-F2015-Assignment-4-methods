@@ -14,8 +14,12 @@ public class MethodSwitch {
         Scanner keyboard = new Scanner(System.in);
         
         // Reformatted the menu options to give one per line.
-        System.out.println("Enter '1' to play FIZZBUZZ.\n" + "Enter '2' to view the value of your chosen word.\n" + "Enter '3' to use the salary calculator.\n"
-                + "Enter '4' to check your grade.\n" + "Enter '5' to play Truth or Dare.\n" + "Enter '6' or any other number to EXIT.");
+        System.out.println("Enter '1' to play FIZZBUZZ.\n" + 
+                "Enter '2' to view the value of your chosen word.\n" + 
+                "Enter '3' to use the salary calculator.\n" + 
+                "Enter '4' to check your grade.\n" + 
+                "Enter '5' to play Truth or Dare.\n" + 
+                "Enter '6' or any other number to EXIT.");
         number = keyboard.nextInt();
         
         /**
