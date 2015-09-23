@@ -2,7 +2,7 @@
 package mkassignment4.methods;
 
 /**
- This program demonstrates the use of methods.
+ *This program demonstrates the use of methods.
  */
 import java.util.Scanner;
 public class MKAssignment4Methods {
