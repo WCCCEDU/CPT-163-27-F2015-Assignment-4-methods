@@ -1,0 +1,124 @@
+/*
+Dylan Tkach
+Java Programming
+CPT-163-27
+ */
+package assignment.pkg2.menu;
+
+import java.util.Scanner;
+
+public class Assignment2Menu {
+
+    public static void main(String[] args) {
+    
+        Scanner keyboard = new Scanner(System.in);
+        
+        //Initialize the menu selection to make the loop iterate once.
+        int MenuSelection = 1;
+        
+        //Loop the menu until the user closes out of it.
+        while(MenuSelection != 0){
+        System.out.println("|=====================================|\n"
+                          +"| Please choose one of the following: |\n"
+                          +"|                                     |\n"
+                          +"| 1. Word Counter                     |\n"
+                          +"| 2. Is it heresy?                    |\n"
+                          +"| 3. List of Primarchs                |\n"
+                          +"| 4. Frame of Reference               |\n"
+                          +"| 5. Contact Info                     |\n"
+                          +"| Enter 0 to exit.                    |\n"
+                          +"|_____________________________________|");
+        
+        System.out.println("\nEnter your selection: ");
+        MenuSelection = keyboard.nextInt();
+        
+        System.out.println("\n\n");
+        
+        
+        switch (MenuSelection){
+            case 0:
+                //Exits the program
+                programExit();
+                break;
+            case 1:
+                wordCounter();
+                break;
+            case 2:
+                heresyCheck();
+                break;
+            case 3:
+                primarchList();
+                break;
+            case 4:
+                muchNeededContext();
+                break;
+            case 5:
+                credits();
+                break;
+            default:
+                //When the user enters a value other than those listed.
+                youDidItWrong();
+        }
+        
+      }
+        
+    }
+    
+    
+    public static void programExit(){
+        System.out.println("Thank you for using this program.");
+    }
+    
+    public static void wordCounter(){
+        int charW = 'W';
+        int charA = 'A';
+        int charR = 'R';
+        int charH = 'H';
+        // A declared.
+        int charM = 'M';
+        // M declared.
+        int charE = 'E';
+        // R declared.
+        
+        int total = charW + charA + charR + charH + charA + charM + charM + charE + charR;
+                
+        System.out.println("You selected choice 1:\n");
+        System.out.println("The ASCII total of WARHAMMER is " + total + ".");
+    }
+    
+    public static void heresyCheck(){
+        System.out.println("You selected choice 2:\n");
+        System.out.println("Is it heresy?\n\n\n");
+        System.out.println("Probably");
+    }
+    
+    public static void primarchList(){
+        System.out.println("You selected choice 3:\n");
+        System.out.println("List of Primarchs:\n"
+                          +"Horus, Lion El'Jonson, Fulgrim, Perturabo,\n"
+                          +"Jaghatai Khan, Leman Russ, Rogal Dorn,\n"
+                          +"Konrad Curze, Sanguinius, Ferrus Manus,\n"
+                          +"Angron, Roboute Guilliman, Mortarion,\n"
+                          +"Magnus, Lorgar, Vulkan, Corvus Cortax,\n"
+                          +"Alpharius Omegon.");
+    }
+    
+    public static void muchNeededContext(){
+        System.out.println("You selected choice 4:\n");
+        System.out.println("This is all in reference to a tabletop");
+        System.out.println("game called called Warhammer 40k.");
+    }
+    
+    public static void credits(){
+        System.out.println("You selected choice 5:\n");
+        System.out.println("This program was made by Dylan Tkach");
+        System.out.println("Github: DTkach");
+        System.out.println("Email: tkachd@my.wccc.edu");
+    }
+    
+    public static void youDidItWrong(){
+        System.out.println("Please enter an option 1 through 5 ");
+        System.out.println("or enter 0 to quit.");
+    }
+    
+}
