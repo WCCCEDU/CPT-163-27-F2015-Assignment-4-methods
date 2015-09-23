@@ -14,7 +14,7 @@ public class Assignment4Methods {
      System.out.println( "1: Addition\n"
                        + "2: Subtraction\n"
                        + "3: Multiplication\n"
-                       + "4: Devision\n"
+                       + "4: Division\n"
                        + "5: Word Counter\n"
                        + "6: Exit Program\n");
      
@@ -45,7 +45,7 @@ public class Assignment4Methods {
          error();
      }   
     }
-    
+       
     /**
      * This method is for the addition part of the program
      * It takes x and y and adds them together
