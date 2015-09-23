@@ -21,7 +21,6 @@ public class SiffrinnAssignment4Methods {
      * Main method displays the menu.
      * @param args the command line arguments
      */
-   
     public static void main(String[] args) {
         
         //create scanner  object for keyboard input
@@ -47,7 +46,7 @@ public class SiffrinnAssignment4Methods {
             userChoice = keyboard.nextInt();
                                            
                
-            //determines output     
+           //determines output     
                 if (userChoice == 1)
                    sandwich();
                    
@@ -90,7 +89,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */
     public static void soup(){            
-            System.out.println("Be careful, it's hot.");
+                    System.out.println("Be careful, it's hot.");
                     
     }                
             /*
@@ -98,7 +97,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */
         public static void pasta(){                
-            System.out.println("Comfort food at it's finest.");       
+                    System.out.println("Comfort food at it's finest.");       
     }    
         
             /*
@@ -106,7 +105,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */
      public static void pizza(){               
-            System.out.println("Let me warm that up for you.");
+                    System.out.println("Let me warm that up for you.");
     }
      
             /*
@@ -114,7 +113,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */               
     public static void salad(){           
-            System.out.println("Excellent choice for a warm day.");
+        System.out.println("Excellent choice for a warm day.");
     }
     
             /*
@@ -122,7 +121,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */           
     public static void program(){            
-            System.out.println("Sorry it's not available right now.");
+        System.out.println("Sorry it's not available right now.");
     }
     
             /*
@@ -130,7 +129,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */   
      public static void exit(){             
-            System.out.println("Exit");
+                    System.out.println("Exit");
 }              
                     
              /*
@@ -138,7 +137,7 @@ public class SiffrinnAssignment4Methods {
             *displays a message when userChoice is selected.
             */          
     public static void invalid(){        
-            System.out.println("Invalid choice.");
+                    System.out.println("Invalid choice.");
                  
             }    
         }    
