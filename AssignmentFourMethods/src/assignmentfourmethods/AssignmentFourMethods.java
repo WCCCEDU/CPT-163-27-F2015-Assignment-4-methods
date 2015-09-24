@@ -32,8 +32,10 @@ public class AssignmentFourMethods {
     System.out.println("This program has ended.");
        }
    
-    //method for if user enters the number 10
-    public static void ten(){
+/*
+   Used if user enters value of 10
+   */
+   public static void ten(){
   int streetNumber;  
   Scanner keyboard = new Scanner(System.in);
   System.out.println("Enter your street number");
@@ -49,7 +51,9 @@ public class AssignmentFourMethods {
             }
     
 }
-//used if user enters 15
+/*
+   uses if user enters 15
+   */
 public static void fifteen(){
     Scanner keyboard = new Scanner(System.in);
     System.out.println("Enter your favorite food that you must eat.");
@@ -65,7 +69,9 @@ public static void fifteen(){
                 System.out.println("You need to start eating more pizza.");
             } 
 }
-//if user enters 20
+/*
+used if user enter 20
+*/
 public static void twenty(){
     int yourAge;    
     Scanner keyboard = new Scanner(System.in);
@@ -82,7 +88,9 @@ public static void twenty(){
                         + " programming class!");
             }
 }
-//used if user enters 25
+/*
+if user enters 25
+*/
 public static void twentyfive(){
     int yourBirthYear;     
     Scanner keyboard = new Scanner(System.in);
@@ -103,7 +111,9 @@ public static void twentyfive(){
                         + "weren't born yet.");
             }
 }
-//if user enters 100
+/*
+if user enter 100
+*/
 public static void hundred(){
             char letterOne='p';
             char letterTwo='e';
