@@ -24,11 +24,12 @@ public class Assignment4Methods {
        
        
       //While loop: run this menu as long as the user does not enter 6 on the main menu
-        while (input != 6) {
+        do {
             
             printMenu();
             print("\nEnter a menu number: ");
             input = keyboard.nextInt();
+            print("\n");
            
             switch(input) {
                 case 1:
@@ -53,10 +54,10 @@ public class Assignment4Methods {
                     print("Oops! Try again.\n");  
                     break;
             }  //end switch  
-        }   //end while
+        }while(input != 6);  //end while
         print("\tProgram Ended - Goodbye!\n");
                
-    }       // end main method
+    }    // end main method
     
     
     /**
@@ -77,7 +78,7 @@ public class Assignment4Methods {
         "Slot Machine Simulator","Reverse Words", "Exit"
        };
        
-        print("\t\tMENU\n\n");
+        print("\n\t\tMENU\n\n");
         
        for(int i=0; i < menuItems.length; i++) {
            print((i+ 1) + ". " + menuItems[i]+"\n");
@@ -108,8 +109,8 @@ public class Assignment4Methods {
         asciiSum = uprH + lwrU + lwrF + lwrF + lwrL + lwrE + lwrP + 
                 lwrU + lwrF + lwrF;
 
-        print("\tThe sum of the word is: " + asciiSum + "\n");
-    };      //end wordValueCalc method
+        print("\tThe sum of the word is: " + asciiSum + "\n\n");
+    }     //end wordValueCalc method
     
     
     /**
@@ -142,7 +143,7 @@ public class Assignment4Methods {
              grade = 'D';
          } else {
              grade = 'F';
-         };
+         }
          
          score = String.format("Your grade: %.2f" + " " + grade + "\n\n", percentage);
          print(score);
@@ -211,7 +212,6 @@ public class Assignment4Methods {
       //Chapter 4 Exercise 22: Slot Machine Simulation (page 267)
       //Objective: Create a program that simulates a slot machine
         Integer betAmt, winnings;
-        Random spin = new Random(); //random object generates new random number
         Integer[] randoms = {0,0,0}; //will hold values to be converted to strings
         String[] slotValues = {" "," "," "};
         String slot1 = " ",slot2 = " ", slot3 = " " ; //hold text representation of randoms
@@ -220,46 +220,55 @@ public class Assignment4Methods {
         print("SLOT MACHINE\n"
                 + "\tPlace Your Bet (dollar amount [Integer]): ");
         betAmt = keyboard.nextInt();
+        
+        while(betAmt != 0) {
+            //validates user input betAmt
+            while(betAmt < 0 && betAmt > 100) {
+                print("\tTry an amount between 1 and 100: ");
+                betAmt = keyboard.nextInt();  
+            }
 
-      //validates user input betAmt
-        while(betAmt < 1 || betAmt > 100) {
-            print("\tTry an amount between 1 and 100");
-            betAmt = keyboard.nextInt();  
-        }
+           /*assign random values to each of the three slots
+            *spin.nextInt(6) will generate a random number from 0 and 5
+            * slotValue() method assigns text value to each slot
+            */
+            for(int i = 0; i < 3; i++) {
+                randoms[i] = (new Random()).nextInt(6);
+                slotValues[i] = slotValue(randoms[i]);
+            }
 
-      /*assign random values to each of the three slots
-       *spin.nextInt(6) will generate a random number from 0 and 5
-       * slotValue() method assigns text value to each slot
-       */
-        for(int i = 0; i < randoms.length; i++) {
-            randoms[i] = spin.nextInt(6);
-            slotValues[i] = slotValue(randoms[i]);
-        }
+          //print all 3 slots
+            print("\n\t[ " + slotValues[0] + " ] [ " + slotValues[1] + " ] [ "
+                     + slotValues[2] + " ]\n\n");
 
-      //print all 3 slots
-        print("\n\t[ " + slotValues[0] + " ] [ " + slotValues[0] + " ] [ "
-                 + slotValues[0] + " ]\n\n");
+          //calculate winning amount
+          //if NONE are equal (probably the most likely)  
+            if(!slotValues[0].equals(slotValues[1]) &&
+                    !slotValues[0].equals(slotValues[2]) &&
+                    !slotValues[1].equals(slotValues[2])){
 
-      //calculate winning amount
-      //if NONE are equal (probably the most likely)  
-        if((!slot1.equals(slot2)) && (!slot1.equals(slot3)) && (!slot2.equals(slot3))){
-            winnings = 0;
-            print("\tSorry! Better luck next time!\n");
+                winnings = 0;
+                print("\tSorry! Better luck next time!\n");
 
-      //some are equal, determine if there are 2 or 3 matching    
-       }else{
-           if((slot1.equals(slot2)) && (slot1.equals(slot3))){
-               winnings = betAmt * 3; //3 Matching
-               print("\tCongratulations! 3 Matching!\n");
-           }else{
-               winnings = betAmt * 2; //2 Matching
-               print("\t2 Matching!\n");
-           }    
-       } //end winnings if-else statement
+          //some are equal, determine if there are 2 or 3 matching    
+          }else{
+              if(slotValues[0].equals(slotValues[1]) &&
+                       slotValues[0].equals(slotValues[2])){
 
-       //print winnings
-       print("\tYou Won: $" + winnings
-                + "\nTo play again, enter 4 on the menu\n");
+                   winnings = betAmt * 3; //3 Matching
+                   print("\tCongratulations! 3 Matching!\n");
+               }else{
+                   winnings = betAmt * 2; //2 Matching
+                   print("\t2 Matching!\n");
+               }    
+           } //end winnings if-else statement
+
+           //print winnings
+           print("\tYou Won: $" + winnings
+                    + "\nTo play again, enter a bet amount or enter 0(zero) to"
+                   + " return to the main menu: ");
+           betAmt = keyboard.nextInt();
+       }    //end while loop
     }   //end slotMachine method
     
     
@@ -296,8 +305,8 @@ public class Assignment4Methods {
      */
     public static void reverseWord(Scanner keyboard) {
       //declare variables
-        String word;
-        String reverseWord = "";
+        String word = "default";
+        String reverseWord="";
         char letter;
         
       //accept input
@@ -320,7 +329,7 @@ public class Assignment4Methods {
         }
         
       //print reverseWord
-        print("Your word backwards---> " + reverseWord);
+        print("Your word backwards---> " + reverseWord + "\n\n");
         
     }       //end reverseWord method
     
