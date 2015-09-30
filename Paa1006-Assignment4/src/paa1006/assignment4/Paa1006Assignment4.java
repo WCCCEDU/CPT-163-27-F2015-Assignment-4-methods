@@ -4,14 +4,12 @@ import java.util.Scanner;   // Needed for Scanner class
 import java.util.Date;      // Needed for Date and Time
 import java.text.DateFormat;    // Needed for Date and Time
 import java.text.SimpleDateFormat;  // Needed for Date and Time
-import java.util.Calendar;      // Needed for Date and Time
-import java.util.concurrent.TimeUnit;
 
 public class Paa1006Assignment4 {
 
     public static void main(String[] args) {
         
-    // Decale variable to test for Do While loop
+    // Declare variable to test for Do While loop
     Boolean exitP = false;      
     do{
         // Declare variables
@@ -23,7 +21,7 @@ public class Paa1006Assignment4 {
         System.out.println("1. Value of a String");
         System.out.println("2. Current Date and Time");
         System.out.println("3. Programmer's Name");
-        System.out.println("4. IDE Used to to Make This");
+        System.out.println("4. IDE Used to Make This");
         System.out.println("5. Programmer's Github Username");
         System.out.println("6. Exit Application");
         System.out.print("Enter a number to select a menu option: ");
@@ -42,31 +40,31 @@ public class Paa1006Assignment4 {
                 word = keyboard2.next();
                 
                 // Call method to get value of string
-               ValueOfString(word);
+               valueOfString(word);
                break;
             case 2:
                 // Call method to Display Date and time
-                DisplayDateTime();
+                displayDateTime();
                 break;
             case 3:
                 // Call method to display name
-                DisplayName();
+                displayName();
                 break;
             case 4:
                 // Call method to display IDE
-                DisplayIDE();
+                displayIDE();
                 break;
             case 5:
                 // Call method to display Github user name
-                DisplayGithub();
+                displayGithub();
                 break;
             case 6:
                 // Call method to display close program message
-                exitP = CloseProgram();
+                exitP = closeProgram();
                 break;
             default:
                 // Call method to display wrong input
-                WrongInput();
+                wrongInput();
         }
     }while(exitP == false);
 }
@@ -75,7 +73,7 @@ public class Paa1006Assignment4 {
      * Method which takes a string, and finds its integer value
      * @param word String
      */
-    public static void ValueOfString(String word){
+    public static void valueOfString(String word){
         // Initialize a counter for value of string
         int valueTotal = 0;
         
@@ -95,7 +93,7 @@ public class Paa1006Assignment4 {
     /**
      * Display Date and Time
      */
-    public static void DisplayDateTime(){
+    public static void displayDateTime(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         System.out.println("The current date and time is: " + dateFormat.format(date));
@@ -104,21 +102,21 @@ public class Paa1006Assignment4 {
     /**
      * Display name
      */
-    public static void DisplayName(){
+    public static void displayName(){
         System.out.println("The programmer's name is Patrick Antoniak.");
     }
     
     /**
      * Display IDE
      */
-    public static void DisplayIDE(){
+    public static void displayIDE(){
         System.out.println("The IDE used to program this was Netbeans.");
     }
     
     /**
      * Display Github user name
      */
-    public static void DisplayGithub(){
+    public static void displayGithub(){
         System.out.println("The programmer's Github username is Paa1006.");
     }
     
@@ -126,18 +124,15 @@ public class Paa1006Assignment4 {
      * Close the program by returning the value to end the loop
      * @return Boolean True
      */
-    public static Boolean CloseProgram(){
-        Boolean exit;
-        
+    public static Boolean closeProgram(){       
         System.out.println("The program is now closing...");
-        exit = true;
-        return exit;
+        return true;
     }
     
     /**
      * Display wrong input message
      */
-    public static void WrongInput(){
+    public static void wrongInput(){
         System.out.println("That's not 1, 2, 3, 4, 5, or 6!");
     }
     
